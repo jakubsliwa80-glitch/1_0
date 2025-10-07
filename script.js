@@ -84,10 +84,10 @@ function handleDrop(event) {
 }
 
 
-// [containerOne, containerTwo].forEach(container => {
-//   container.addEventListener('dragover', handleDragOver);
-//   container.addEventListener('drop', handleDrop);
-// });
+[containerOne, containerTwo].forEach(container => {
+  container.addEventListener('dragover', handleDragOver);
+  container.addEventListener('drop', handleDrop);
+});
 
-containerTwo.addEventListener('dragover', handleDragOver);
-containerTwo.addEventListener('drop', handleDrop);
+// containerTwo.addEventListener('dragover', handleDragOver);
+// containerTwo.addEventListener('drop', handleDrop);
