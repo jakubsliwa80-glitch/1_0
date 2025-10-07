@@ -68,13 +68,6 @@ let draggedElementId;
 draggableElement.addEventListener('dragstart', (event) => {
   draggedElementId = event.target.id;
   event.dataTransfer.setData('text/plain', draggedElementId);
-  setTimeout(() => {
-    event.target.style.opacity = '0.5';
-  }, 0);
-});
-
-draggableElement.addEventListener('dragend', (event) => {
-  event.target.style.opacity = '1';
 });
 
 function handleDragOver(event) {
@@ -84,34 +77,17 @@ function handleDragOver(event) {
 function handleDrop(event) {
   event.preventDefault();
 
-  event.currentTarget.classList.remove('hovered');
-
   const data = event.dataTransfer.getData('text/plain');
   const elementToMove = document.getElementById(data);
 
   event.currentTarget.appendChild(elementToMove);
 }
 
-function handleDragEnter(event) {
 
-  if (event.currentTarget.id.startsWith('ex3_')) {
-    event.currentTarget.classList.add('hovered');
-  }
-}
+// [containerOne, containerTwo].forEach(container => {
+//   container.addEventListener('dragover', handleDragOver);
+//   container.addEventListener('drop', handleDrop);
+// });
 
-function handleDragLeave(event) {
-  event.currentTarget.classList.remove('hovered');
-}
-
-
-[containerOne, containerTwo].forEach(container => {
-  container.addEventListener('dragover', handleDragOver);
-  container.addEventListener('drop', handleDrop);
-  container.addEventListener('dragenter', handleDragEnter);
-  container.addEventListener('dragleave', handleDragLeave);
-});
-
-// containerTwo.addEventListener('dragover', handleDragOver);
-// containerTwo.addEventListener('drop', handleDrop);
-// containerTwo.addEventListener('dragenter', handleDragEnter);
-// containerTwo.addEventListener('dragleave', handleDragLeave);
+containerTwo.addEventListener('dragover', handleDragOver);
+containerTwo.addEventListener('drop', handleDrop);
