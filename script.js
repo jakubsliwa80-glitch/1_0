@@ -104,14 +104,14 @@ function handleDragLeave(event) {
 }
 
 
-// [containerOne, containerTwo].forEach(container => {
-//   container.addEventListener('dragover', handleDragOver);
-//   container.addEventListener('drop', handleDrop);
-//   container.addEventListener('dragenter', handleDragEnter);
-//   container.addEventListener('dragleave', handleDragLeave);
-// });
+[containerOne, containerTwo].forEach(container => {
+  container.addEventListener('dragover', handleDragOver);
+  container.addEventListener('drop', handleDrop);
+  container.addEventListener('dragenter', handleDragEnter);
+  container.addEventListener('dragleave', handleDragLeave);
+});
 
-containerTwo.addEventListener('dragover', handleDragOver);
-containerTwo.addEventListener('drop', handleDrop);
-containerTwo.addEventListener('dragenter', handleDragEnter);
-containerTwo.addEventListener('dragleave', handleDragLeave);
+// containerTwo.addEventListener('dragover', handleDragOver);
+// containerTwo.addEventListener('drop', handleDrop);
+// containerTwo.addEventListener('dragenter', handleDragEnter);
+// containerTwo.addEventListener('dragleave', handleDragLeave);
